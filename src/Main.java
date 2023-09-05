@@ -5,12 +5,12 @@ public class Main {
        // This is the main() function.
        // You can run test code here.
        
-       int[] a = {1, 2};
-       int[] b = {5, 8};
+       int n = 3;
+       int d = 4;
 
-       int[] result = min(a, b);
+       int[] fraction = { n, d };
 
-       System.out.println(result[0] + "/" + result[1]);
+       System.out.println(toString(fraction));
        // When you're ready, uncomment this function to run the grader.
        //gradeProject();
    }
@@ -22,7 +22,11 @@ public class Main {
    // 2. Returns a nice looking String like "3/4" or "-2/5".
    // Your Fractions should look nice, but does not need to be simplified.
    public static String toString(int[] a){
-       return "";
+       int n = a[0];
+       int d = a[1];
+
+       int[] fraction = new int[] { n, d };
+       return ("" + (fraction[0] + "/" + fraction[1]) + "");
    }
    // 3. Returns the sum of the 2 arguments. No need to simplify.
    public static int[] add(int[] a, int[] b){
@@ -94,13 +98,43 @@ public class Main {
    }
    // 8. Create the Fractions 1/2, 1/3, ... , 1/10, print them out, and return the sum.
    public static int[] task1(){
-       return null;
+       int[] a = {1, 2};
+       int[] b = {1, 3};
+       int[] c = {1, 4};
+       int[] d = {1, 5};
+       int[] e = {1, 6};
+       int[] f = {1, 7};
+       int[] g = {1, 8};
+       int[] h = {1, 9};
+       int[] i = {1, 10};
+
+       int common = a[1] * b[1] * c[1] * d[1] * e[1] * f[1] * g[1] * h[1] * i[1];
+       a[0] = a[0] * common;
+       b[0] = b[0] * common;
+       c[0] = c[0] * common;
+       d[0] = d[0] * common;
+       e[0] = e[0] * common;
+       f[0] = f[0] * common;
+       g[0] = g[0] * common;
+       h[0] = h[0] * common;
+       i[0] = i[0] * common;
+
+       int sumN = a[0] + b[0] + c[0] + d[0] + e[0] + f[0] + g[0] + h[0] + i[0];
+
+       return new int[] {sumN, common};
    }
    // 9. To simplify a Fraction, go through numbers >=2 (you decide where to stop),
    // and if it divides both numerator and denominator, divide it out of the
    // numerator and denominator. Consider what happens when you have 4/8!
    public static int[] simplify(int[] a){
-       return null;
+       int n = a[0];
+       int d = a[1];
+
+       if (d % n == 0) {
+           n = 1;
+           d = d / n;
+       }
+       return new int[] { n, d };
    }
    // 10. Go back to your code and add simplification where appropriate.
    // Which functions did you simplify in?
