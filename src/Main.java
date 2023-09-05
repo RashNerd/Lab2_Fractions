@@ -4,13 +4,8 @@ public class Main {
    public static void main(String[] args) {
        // This is the main() function.
        // You can run test code here.
-       
-       int n = 3;
-       int d = 4;
-
-       int[] fraction = { n, d };
-
-       System.out.println(toString(fraction));
+       int[] fraction = task1();
+       System.out.println(fraction[0] + "/" + fraction[1]);
        // When you're ready, uncomment this function to run the grader.
        //gradeProject();
    }
@@ -96,32 +91,36 @@ public class Main {
            return new int[] {a[0], a[1]};
        }
    }
+   public static int factorial(int n) {
+       if (n == 0) {
+           return 1;
+       } else {
+           return n * factorial(n - 1);
+       }
+   }
    // 8. Create the Fractions 1/2, 1/3, ... , 1/10, print them out, and return the sum.
    public static int[] task1(){
-       int[] a = {1, 2};
-       int[] b = {1, 3};
-       int[] c = {1, 4};
-       int[] d = {1, 5};
-       int[] e = {1, 6};
-       int[] f = {1, 7};
-       int[] g = {1, 8};
-       int[] h = {1, 9};
-       int[] i = {1, 10};
+       // use the above add() function
+         int[] a = new int[] {1, 2};
+         int[] b = new int[] {1, 3};
+         int[] c = new int[] {1, 4};
+         int[] d = new int[] {1, 5};
+         int[] e = new int[] {1, 6};
+         int[] f = new int[] {1, 7};
+         int[] g = new int[] {1, 8};
+         int[] h = new int[] {1, 9};
+         int[] i = new int[] {1, 10};
 
-       int common = a[1] * b[1] * c[1] * d[1] * e[1] * f[1] * g[1] * h[1] * i[1];
-       a[0] = a[0] * common;
-       b[0] = b[0] * common;
-       c[0] = c[0] * common;
-       d[0] = d[0] * common;
-       e[0] = e[0] * common;
-       f[0] = f[0] * common;
-       g[0] = g[0] * common;
-       h[0] = h[0] * common;
-       i[0] = i[0] * common;
+         int[] sum1 = add(a, b);
+         int[] sum2 = add(sum1, c);
+         int[] sum3 = add(sum2, d);
+         int[] sum4 = add(sum3, e);
+         int[] sum5 = add(sum4, f);
+         int[] sum6 = add(sum5, g);
+         int[] sum7 = add(sum6, h);
+         int[] sum8 = add(sum7, i);
 
-       int sumN = a[0] + b[0] + c[0] + d[0] + e[0] + f[0] + g[0] + h[0] + i[0];
-
-       return new int[] {sumN, common};
+         return new int[] {sum8[0], sum8[1]};
    }
    // 9. To simplify a Fraction, go through numbers >=2 (you decide where to stop),
    // and if it divides both numerator and denominator, divide it out of the
