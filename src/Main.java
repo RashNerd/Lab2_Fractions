@@ -4,12 +4,7 @@ public class Main {
         // You can run test code here.
         int[] fraction = task1();
         System.out.println(fraction[0] + "/" + fraction[1]);
- 
-        int[] a = {1, 2};
-        int[] b = {1, 3};
- 
-        int[] result = add(a, b);
-        System.out.println(result[0] + "/" + result[1]);
+
         // When you're ready, uncomment this function to run the grader.
         //gradeProject();
     }
@@ -82,17 +77,9 @@ public class Main {
           int[] g = new int[] {1, 8};
           int[] h = new int[] {1, 9};
           int[] i = new int[] {1, 10};
- 
-          int[] sum1 = add(a, b);
-          int[] sum2 = add(sum1, c);
-          int[] sum3 = add(sum2, d);
-          int[] sum4 = add(sum3, e);
-          int[] sum5 = add(sum4, f);
-          int[] sum6 = add(sum5, g);
-          int[] sum7 = add(sum6, h);
-          int[] sum8 = add(sum7, i);
- 
-          return new int[] {sum8[0], sum8[1]};
+
+          int[] sum = add(add(add(add(add(add(add(add(a,b),c),d),e),f),g),h),i);
+          return new int[] { sum[0], sum[1] };
     }
     // 9. To simplify a Fraction, go through numbers >=2 (you decide where to stop),
     // and if it divides both numerator and denominator, divide it out of the
